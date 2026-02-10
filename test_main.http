@@ -1,0 +1,19 @@
+@host=http://localhost:8000
+@apiKey=api-key
+
+POST {{host}}/reports/
+Authorization: {{apiKey}}
+Accept: application/json
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="file"; filename="Informe radiológico Chester.pdf"
+
+< C:\Users\name\Documents\file.pdf
+--boundary--
+
+###
+
+GET {{host}}/reports/2ee7d6de-0047-418a-ada7-1574840f1447
+Authorization: {{apiKey}}
+Accept: application/json
